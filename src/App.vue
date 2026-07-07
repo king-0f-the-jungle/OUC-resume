@@ -41,7 +41,7 @@ onBeforeMount(() => {
     <el-main>
       <!-- 路由出口 -->
       <main class="App-router">
-          <router-view></router-view>
+        <router-view></router-view>
       </main>
     </el-main>
   </el-container>
@@ -59,8 +59,9 @@ onBeforeMount(() => {
   padding: 0;
   height: calc(100vh - 60px);
   .App-router {
+    height: 100%;
     width: 80%;
-    margin: 20px auto;
+    margin: 0 auto;
     min-width: 1024px;
   }
 }

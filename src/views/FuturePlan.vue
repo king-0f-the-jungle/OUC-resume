@@ -3,73 +3,77 @@
 import { useFuturePlanStore } from '@/stores/futurePlanStore.ts'
 import { storeToRefs } from 'pinia'
 const { Plan } = storeToRefs(useFuturePlanStore())
-
+defineOptions({
+  name: 'FuturePlan',
+})
 </script>
 
 <template>
-  <el-card class="FuturePlan-interest">
-    <template #header>
-      <div class="FuturePlan-interest-header">
-        <h4>研究兴趣</h4>
-      </div>
-    </template>
-    <p>{{ Plan?.interest }}</p>
-  </el-card>
-  <el-divider />
-  <el-card class="FuturePlan-interest">
-    <template #header>
-      <div class="FuturePlan-interest-header">
-        <h4>未来规划</h4>
-      </div>
-    </template>
-    <el-timeline>
-      <el-timeline-item timestamp="研零" placement="top">
-        <el-card>
-          <div class="FuturePlan-timeline-content">
-            <div v-for="(item, index) in Plan?.plan[0]" :key="index">
-              <h4>{{ item.name }}</h4>
-              <p>{{ item.content }}</p>
+  <el-scrollbar>
+    <el-card class="FuturePlan-interest">
+      <template #header>
+        <div class="FuturePlan-interest-header">
+          <h4>研究兴趣</h4>
+        </div>
+      </template>
+      <p>{{ Plan?.interest }}</p>
+    </el-card>
+    <el-divider />
+    <el-card class="FuturePlan-interest">
+      <template #header>
+        <div class="FuturePlan-interest-header">
+          <h4>未来规划</h4>
+        </div>
+      </template>
+      <el-timeline>
+        <el-timeline-item timestamp="研零" placement="top">
+          <el-card>
+            <div class="FuturePlan-timeline-content">
+              <div v-for="(item, index) in Plan?.plan[0]" :key="index">
+                <h4>{{ item.name }}</h4>
+                <p>{{ item.content }}</p>
+              </div>
             </div>
-          </div>
-        </el-card>
-      </el-timeline-item>
-      <el-timeline-item timestamp="研一" placement="top">
-        <el-card>
-          <div class="FuturePlan-timeline-content">
-            <div v-for="(item, index) in Plan?.plan[1]" :key="index">
-              <h4>{{ item.name }}</h4>
-              <p>{{ item.content }}</p>
+          </el-card>
+        </el-timeline-item>
+        <el-timeline-item timestamp="研一" placement="top">
+          <el-card>
+            <div class="FuturePlan-timeline-content">
+              <div v-for="(item, index) in Plan?.plan[1]" :key="index">
+                <h4>{{ item.name }}</h4>
+                <p>{{ item.content }}</p>
+              </div>
             </div>
-          </div>
-        </el-card>
-      </el-timeline-item>
-      <el-timeline-item timestamp="研二" placement="top">
-        <el-card>
-          <div class="FuturePlan-timeline-content">
-            <div v-for="(item, index) in Plan?.plan[2]" :key="index">
-              <h4>{{ item.name }}</h4>
-              <p>{{ item.content }}</p>
+          </el-card>
+        </el-timeline-item>
+        <el-timeline-item timestamp="研二" placement="top">
+          <el-card>
+            <div class="FuturePlan-timeline-content">
+              <div v-for="(item, index) in Plan?.plan[2]" :key="index">
+                <h4>{{ item.name }}</h4>
+                <p>{{ item.content }}</p>
+              </div>
             </div>
-          </div>
-        </el-card>
-      </el-timeline-item>
-      <el-timeline-item timestamp="研三" placement="top">
-        <el-card>
-          <div class="FuturePlan-timeline-content">
-            <div v-for="(item, index) in Plan?.plan[3]" :key="index">
-              <h4>{{ item.name }}</h4>
-              <p>{{ item.content }}</p>
+          </el-card>
+        </el-timeline-item>
+        <el-timeline-item timestamp="研三" placement="top">
+          <el-card>
+            <div class="FuturePlan-timeline-content">
+              <div v-for="(item, index) in Plan?.plan[3]" :key="index">
+                <h4>{{ item.name }}</h4>
+                <p>{{ item.content }}</p>
+              </div>
             </div>
-          </div>
-        </el-card>
-      </el-timeline-item>
-    </el-timeline>
-  </el-card>
+          </el-card>
+        </el-timeline-item>
+      </el-timeline>
+    </el-card>
+  </el-scrollbar>
 </template>
 
 <style scoped lang="scss">
 .FuturePlan-interest {
-  margin: 0 auto;
+  margin: 20px auto 0;
   &-header {
     h4 {
       margin: 0;
