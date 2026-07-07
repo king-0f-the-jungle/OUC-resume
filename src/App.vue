@@ -41,7 +41,11 @@ onBeforeMount(() => {
     <el-main>
       <!-- 路由出口 -->
       <main class="App-router">
-        <router-view></router-view>
+        <router-view v-slot="{ Component }">
+          <keep-alive>
+            <component :is="Component" />
+          </keep-alive>
+        </router-view>
       </main>
     </el-main>
   </el-container>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 
 const dialogVisible = ref(false)
 // Pinia状态管理
@@ -8,6 +8,9 @@ import { storeToRefs } from 'pinia'
 const { Info } = storeToRefs(useBaseInfoStore())
 defineOptions({
   name: 'BaseInfo',
+})
+onBeforeMount(() => {
+  console.log("QwQ")
 })
 </script>
 

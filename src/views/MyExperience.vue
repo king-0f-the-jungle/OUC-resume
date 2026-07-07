@@ -9,7 +9,7 @@ defineOptions({
 
 <template>
   <el-scrollbar class="scrollbar">
-    <el-backtop target=".el-scrollbar__wrap"></el-backtop>
+    <el-backtop target=".el-scrollbar__wrap" visibility-height="20"></el-backtop>
     <el-card v-for="(project, index) in Experience" :key="index">
       <template #header>
         <h2>{{ project.title }}</h2>
@@ -20,6 +20,8 @@ defineOptions({
           {{ sentence }}
         </p>
         <el-image
+          lazy
+          scroll-container=".el-scrollbar__wrap"
           v-for="(img, i_index) in phase.images"
           :key="i_index"
           :src="`/images/${project.name}/${img}`"
